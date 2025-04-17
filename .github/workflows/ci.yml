@@ -20,6 +20,9 @@ jobs:
 
       - name: Run tests
         run: go test -cover ./...
+        
+      - name: Gosec Security Checker
+        uses: securego/gosec@v2.22.3
   
   style:
     name: Style
