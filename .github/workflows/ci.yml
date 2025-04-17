@@ -21,8 +21,11 @@ jobs:
       - name: Run tests
         run: go test -cover ./...
         
-      - name: Gosec Security Checker
-        uses: securego/gosec@v2.22.3
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+      
+      - name: Run gosec
+        run: gosec ./...
   
   style:
     name: Style
